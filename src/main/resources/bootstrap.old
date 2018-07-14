@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: ${MODE:local}, ${ENV:local}
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: mysecretpassword
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+        
+  
+  
+  
+  
