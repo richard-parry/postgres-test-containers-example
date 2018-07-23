@@ -8,10 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import org.hibernate.annotations.ColumnTransformer;
-
 @Entity
-@Table(name = "customer", schema="psql")
+@Table(name = "customer", schema="test")
 public class Customer  {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -26,12 +24,10 @@ public class Customer  {
     private String lastName;
     
     @Column(name="sort_code", nullable=false)
-    @ColumnTransformer(read = "pgp_sym_decrypt(sort_code::bytea, 'secret_password')", write = "pgp_sym_encrypt(?, 'secret_password')")
     private String sortCode;
     
     @Column(name="account_number", nullable=false)
-    @ColumnTransformer(read = "pgp_sym_decrypt(account_number::bytea, 'secret_password')", write = "pgp_sym_encrypt(?, 'secret_password')")
-    private String account_number;
+    private String accountNumber;
 
     /**
      * @return the id
@@ -39,6 +35,15 @@ public class Customer  {
     public Long getId()
     {
         return id;
+    }
+
+    /**
+     * @return
+     */
+    private String getPassword()
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     /**
@@ -100,17 +105,17 @@ public class Customer  {
     /**
      * @return the account_number
      */
-    public String getAccount_number()
+    public String getAccountNumber()
     {
-        return account_number;
+        return accountNumber;
     }
 
     /**
      * @param account_number the account_number to set
      */
-    public void setAccount_number(String account_number)
+    public void setAccountNumber(String accountNumber)
     {
-        this.account_number = account_number;
+        this.accountNumber = accountNumber;
     }
 
     

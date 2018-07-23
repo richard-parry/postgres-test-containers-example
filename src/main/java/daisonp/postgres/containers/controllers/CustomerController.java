@@ -27,6 +27,11 @@ public class CustomerController
     public Page<Customer> getCustomerss(Pageable pageable) {
         return repository.findAll(pageable);
     }
+    
+    @GetMapping("/customers/{id}")
+    public Customer getCustomerss(@PathVariable Long id) {
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("not found") );
+    }
 
 
     @PostMapping("/customers")
