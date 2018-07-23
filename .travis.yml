@@ -1,0 +1,16 @@
+# Sudo is required to run Docker
+sudo: required
+
+# Let Travis know this is a Java project.
+# Travis will run the maven commands to retrieve dependencies and build your artefact.
+language: java
+
+# Build with Open JDK 8 to ensure consistency with Docker image
+jdk:
+  - openjdk8
+
+# We need Docker to build our Docker image
+services:
+    - docker
+
+script: mvn clean install -e
