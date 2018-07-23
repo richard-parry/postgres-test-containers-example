@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <customer id="1111" first_name="Sid" last_name="James" sort_code="000000" account_number="12345678"/>
+    <customer id="2222" first_name="Hattie" last_name="Jacques" sort_code="000001" account_number="87654321"/>
+    <customer id="3333" first_name="Joan" last_name="Sims" sort_code="000001" account_number="00909012"/>
+</dataset>
