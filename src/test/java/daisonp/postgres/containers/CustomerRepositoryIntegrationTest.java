@@ -38,13 +38,13 @@ public class CustomerRepositoryIntegrationTest
 {
     
     @SuppressWarnings("rawtypes")
-    @ClassRule
-    public static PostgreSQLContainer postgreSQLContainer = 
-        (PostgreSQLContainer) new PostgreSQLContainer("postgres:10.4")
-            .withDatabaseName("sampledb")
-            .withUsername("test")
-            .withPassword("test")
-            .withStartupTimeout(Duration.ofSeconds(600));
+    // @ClassRule
+    // public static PostgreSQLContainer postgreSQLContainer = 
+    //     (PostgreSQLContainer) new PostgreSQLContainer("postgres:10.4")
+    //         .withDatabaseName("sampledb")
+    //         .withUsername("test")
+    //         .withPassword("test")
+    //         .withStartupTimeout(Duration.ofSeconds(600));
 
     @Autowired
     CustomerRepository repo;
